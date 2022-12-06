@@ -38,17 +38,12 @@ The input passed the Luhn test and contains 16 digits, making it a valid credit 
 public class CreditCardValidation {
 
     public static void main(String[] args) {
-
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter credit card number:");
-
         validateCreditCardNumber(input.next());
-
         input.close();
     }
-
     public static void validateCreditCardNumber(String cardNumber) {
-
         long total = 0;
 
         // convert String input to int
@@ -69,17 +64,13 @@ public class CreditCardValidation {
             }
         }
 
-        // modulo 10 check
+        // Luhn / modulo 10 check
         for (int j = 0; j < reversedArray.length; j++) {
             total += reversedArray[j];
         }
-
         if (total % 10 == 0)
             System.out.println(cardNumber + " is VALID credit card number");
         else
             System.err.println(cardNumber + " is INVALID credit card number");
-
     }
-
-
 }

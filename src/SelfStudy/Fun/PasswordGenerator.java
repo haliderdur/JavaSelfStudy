@@ -1,3 +1,4 @@
+
 package SelfStudy.Fun;
 
 import java.util.Random;
@@ -26,9 +27,7 @@ public class PasswordGenerator {
 
         for (int i = 0; i < length; i++) {
             password[i] = passSymbols.charAt(rnd.nextInt(passSymbols.length()));
-
         }
         return password;
     }
-
 }
