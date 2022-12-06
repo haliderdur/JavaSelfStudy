@@ -43,30 +43,24 @@ public class CreditCardValidation {
         validateCreditCardNumber(input.next());
         input.close();
     }
+
     public static void validateCreditCardNumber(String cardNumber) {
         long total = 0;
 
-        // convert String input to int
         int[] creditCardArray = new int[cardNumber.length()];
         for (int i = 0; i < cardNumber.length(); i++) {
             creditCardArray[i] = Integer.parseInt(cardNumber.substring(i, i + 1));
         }
 
-        // reverse and multiply the even indexes and subtract 9 if index is greater than 9
-        int[] reversedArray = new int[creditCardArray.length];
-        for (int i = creditCardArray.length - 1; i >= 0; i--) {
-            reversedArray[i] += creditCardArray[i];
-        }
-        for (int i = 0; i < reversedArray.length; i = i + 2) {
-            reversedArray[i] = reversedArray[i] * 2;
-            if (reversedArray[i] > 9) {
-                reversedArray[i] = reversedArray[i] - 9;
+        for (int i = 0; i < creditCardArray.length; i = i + 2) {
+            creditCardArray[i] = creditCardArray[i] * 2;
+            if (creditCardArray[i] > 9) {
+                creditCardArray[i] = creditCardArray[i] - 9;
             }
         }
 
-        // Luhn / modulo 10 check
-        for (int j = 0; j < reversedArray.length; j++) {
-            total += reversedArray[j];
+        for (int j = 0; j < creditCardArray.length; j++) {
+            total += creditCardArray[j];
         }
         if (total % 10 == 0)
             System.out.println(cardNumber + " is VALID credit card number");
