@@ -2,30 +2,82 @@ package SelfStudy.InheritancePractise.CryptoTask;
 
 public class CryptoToken {
 
-    public String name;
-    public double price;
-    public int quantity;
-    public double marketCap;
-    public double volume;
-    public boolean isMineable;
+    private String name;
+    private double price;
+    private int quantity;
+    private double marketCap;
+    private double volume;
+    private boolean isMineable;
 
-    public void setInfo(String name, double price, int quantity, double marketCap, double volume, boolean isMineable) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        if (quantity <= 0) {
+            System.err.println("Quantity can not be '0' or less than '0': " + quantity);
+            System.exit(1);
+        }
         this.quantity = quantity;
+    }
+
+    public double getMarketCap() {
+        return marketCap;
+    }
+
+    public void setMarketCap(double marketCap) {
         this.marketCap = marketCap;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(double volume) {
         this.volume = volume;
-        this.isMineable = isMineable;
+    }
+
+    public boolean getIsMineable() {
+        return isMineable;
+    }
+
+    public void setMineable(boolean mineable) {
+        isMineable = mineable;
+    }
+
+    public CryptoToken(String name, double price, int quantity, double marketCap, double volume, boolean isMineable) {
+        setName(name);
+        setPrice(price);
+        setQuantity(quantity);
+        setMarketCap(marketCap);
+        setVolume(volume);
+        setMineable(isMineable);
     }
 
     public String toString() {
         return "CryptoToken{" +
-                " name= " + name +
-                ", price= $" + price +
-                ", quantity= " + quantity +
-                ", marketCap= " + marketCap +
-                ", volume= " + volume +
-                ", isMineable= " + isMineable +
+                "name='" + getName() + '\'' +
+                ", price=" + getPrice() +
+                ", quantity=" + getQuantity() +
+                ", marketCap=" + getMarketCap() +
+                ", volume=" + getVolume() +
+                ", isMineable=" + getIsMineable() +
                 '}';
     }
 

@@ -1,19 +1,22 @@
 package CoderByte;
 
 
+import java.util.Scanner;
+
 public class LongestWord {
-    public static String LongestWord(String sen) {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter words separated by space:");
+        System.out.println(LongestWord(scan.nextLine()));
+    }
+
+    public static String LongestWord(String str) {
 
         int max = 0;
         String longest = "";
 
-        for (int i = 0; i < sen.length(); i++) {
-            char ch = sen.charAt(i);
-            if (Character.isLetter(ch) || Character.isSpaceChar(ch)) {
-                longest += ch;
-            }
-        }
-        String[] arr = longest.split(" ");
+        String[] arr = str.split(" ");
 
         for (String each : arr) {
             if (each.length() > max) {
