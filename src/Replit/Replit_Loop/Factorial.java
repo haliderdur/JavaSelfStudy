@@ -15,11 +15,12 @@ public class Factorial {
 
         int result = n;
 
-        for (int i = n; i >= 1; i--) {  // 5 4 3 2 1
-            result = result * i;  // 5*5, 5*4, 5*3, 5*2, 5*1
-            //  25,   25*4,   (25*4)*3,   ((25*4)*3)*2,   (((25*4)*3))*2
+        for (int i = n-1; i >= 1; i--) {  // 5 4 3 2 1
+            result = result * i;  // 5*4, 5*3, 5*2, 5*1
         }
-        System.out.println(result / n);  // loop runs total n times. so (/n) divide n
+
+        System.out.println(result);  // loop runs total n times. so (/n) divide n
+
 
     }
 }
