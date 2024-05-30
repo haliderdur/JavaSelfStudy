@@ -18,6 +18,8 @@ public class FirstName {
         System.out.println("Please enter your full name:");
         names(scan.nextLine());
 
+        scan.close();
 
     }
+
 }

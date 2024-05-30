@@ -15,18 +15,7 @@ public class posNeg {
 
     public boolean posNeg(int a, int b, boolean negative) {
 
-        if (negative == true) {
-            if (a < 0 && b < 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
-            return true;
-        } else {
-            return false;
-        }
+        return negative ? (a < 0 && b < 0) : ((a < 0 && b > 0) || (a > 0 && b < 0));
     }
 
     public static void main(String[] args) {
